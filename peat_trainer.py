@@ -4,6 +4,9 @@ import time
 import matplotlib.pyplot as plt
 import pytorch_lightning as pl
 import segmentation_models_pytorch as smp
+import numpy as np
+
+from sklearn.model_selection import train_test_split
 
 from pprint import pprint
 from torch.utils.data import DataLoader
@@ -12,12 +15,34 @@ from peat_dataloader import PeatDataset
 
 from torchvision.utils import save_image
 
+import neptune.new as neptune
+
+
+run = neptune.init(project='ajravikumar/peat-segmentation')
+
+params = {
+    "batch_size": 16,
+    "learning_rate": 1e-4,
+    "optimizer": "Adam",
+    "criterion": "DiceLoss",
+    "resolution": "256x256"
+}
+run["parameters"] = params
+
+
 
 train_dataset = PeatDataset()
 
+# import pdb; pdb.set_trace()
 
-train_dataloader = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=8, drop_last=True)
+train_data, val_data = train_test_split(train_dataset, test_size=0.25)
 
+print(len(train_dataset))
+print(len(train_data))
+print(len(val_data))
+
+train_dataloader = DataLoader(train_data, batch_size=16, shuffle=True, num_workers=8, drop_last=True)
+val_dataloader = DataLoader(val_data, batch_size=16, num_workers=8, drop_last=True)
 
 device = torch.device("cuda:0") 
 
@@ -36,23 +61,6 @@ best_loss = float('inf')
 model_version = '0.00'
 
 
-# for epoch in range(10):
-#     for image,mask in train_dataloader:
-#         image=image.to(device)
-#         mask=mask.to(device)
-#         pred = model(image) 
-
-#         loss = criterion(pred, mask)
-#         print(loss.item())
-
-#         optimizer.zero_grad()
-
-#         loss.backward()
-#         optimizer.step()
-
-
-#     # print images
-
 
 def train_model(model, train_dataloader, optimizer, epoch):
     _ = model.train()
@@ -61,6 +69,7 @@ def train_model(model, train_dataloader, optimizer, epoch):
     if torch.cuda.is_available():
         model.cuda()
     
+    losses = []
 
     for image,mask in train_dataloader:
         optimizer.zero_grad()
@@ -78,11 +87,14 @@ def train_model(model, train_dataloader, optimizer, epoch):
         
         loss = criterion(prediction, mask)
 
-        loss_total += loss/16
-
+        # loss_total += loss/16
+        
         print(loss.item())
 
-        total += 1
+        loss_value = loss.item()
+        losses.append(loss_value)
+
+        
 
         loss.backward()
         optimizer.step()
@@ -90,12 +102,59 @@ def train_model(model, train_dataloader, optimizer, epoch):
     save_image(prediction, f'outputs/prediction{epoch}.png')
     save_image(image, f'outputs/image{epoch}.png')
     save_image(mask, f'outputs/mask{epoch}.png')
+
+    train_loss_epoch = np.round(np.mean(losses), 4)
     
-    return loss_total/total
+    return train_loss_epoch
+
+
+def val_model (model, val_dataloader, optimizer, epoch):
+
+    _ = model.eval()
+
+    if torch.cuda.is_available():
+        model.cuda()
+    
+    losses = []
+
+    for image,mask in val_dataloader:
+        
+        if torch.cuda.is_available():
+            image = image.cuda()
+            mask = mask.cuda()
+            
+
+        prediction = model.forward(image)
+        
+        
+        loss = criterion(prediction, mask)
+
+        # loss_total += loss/16
+        
+        # print(loss.item())
+
+        loss_value = loss.item()
+        losses.append(loss_value)
+
+        
+
+        loss.backward()
+        optimizer.step()
+    
+    val_loss_epoch = np.round(np.mean(losses), 4)
+    
+    return val_loss_epoch
+
 
 
 for epoch in range(50):
     loss = train_model(model, train_dataloader, optimizer, epoch )
+
+    val_loss = val_model(model, val_dataloader, optimizer, epoch)
+
+    run["train/loss"].log(loss)
+    run["validation/loss"].log(val_loss)
+    # run.stop()
 
     print('total loss is' , loss.item())
 
