@@ -1,0 +1,47 @@
+Number of training samples: 2828
+Number of validation samples: 353
+Number of test samples: 354
+Traceback (most recent call last):
+  File "peat_trainer.py", line 232, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 129, in train_model
+    prediction = model.forward(image)
+  File "/home/ajay/.local/lib/python3.8/site-packages/segmentation_models_pytorch/base/model.py", line 29, in forward
+    features = self.encoder(x)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/segmentation_models_pytorch/encoders/resnet.py", line 62, in forward
+    x = stages[i](x)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.ByteTensor) and weight type (torch.cuda.FloatTensor) should be the same
+Traceback (most recent call last):
+  File "peat_trainer.py", line 232, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 129, in train_model
+    prediction = model.forward(image)
+  File "/home/ajay/.local/lib/python3.8/site-packages/segmentation_models_pytorch/base/model.py", line 29, in forward
+    features = self.encoder(x)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/segmentation_models_pytorch/encoders/resnet.py", line 62, in forward
+    x = stages[i](x)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.ByteTensor) and weight type (torch.cuda.FloatTensor) should be the same

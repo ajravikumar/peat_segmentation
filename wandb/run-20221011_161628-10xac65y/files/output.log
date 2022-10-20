@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "peat_trainer.py", line 43, in <module>
+    train_dataset = PeatDataset('train')
+  File "/home/ajay/Documents/smartbog_imgseg/peat_dataloader.py", line 58, in __init__
+    A.ToTensorV2 ()
+AttributeError: module 'albumentations' has no attribute 'ToTensorV2'
+Traceback (most recent call last):
+  File "peat_trainer.py", line 43, in <module>
+    train_dataset = PeatDataset('train')
+  File "/home/ajay/Documents/smartbog_imgseg/peat_dataloader.py", line 58, in __init__
+    A.ToTensorV2 ()
+AttributeError: module 'albumentations' has no attribute 'ToTensorV2'

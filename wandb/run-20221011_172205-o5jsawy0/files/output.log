@@ -1,0 +1,55 @@
+Number of training samples: 2828
+Number of validation samples: 353
+Number of test samples: 354
+Traceback (most recent call last):
+  File "peat_trainer.py", line 232, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 121, in train_model
+    for image,mask in train_dataloader:
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+KeyError: Caught KeyError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ajay/Documents/smartbog_imgseg/peat_dataloader.py", line 104, in __getitem__
+    image = self.transform(image)
+  File "/home/ajay/.local/lib/python3.8/site-packages/albumentations/core/composition.py", line 188, in __call__
+    raise KeyError("You have to pass data to augmentations as named arguments, for example: aug(image=image)")
+KeyError: 'You have to pass data to augmentations as named arguments, for example: aug(image=image)'
+Traceback (most recent call last):
+  File "peat_trainer.py", line 232, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 121, in train_model
+    for image,mask in train_dataloader:
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/_utils.py", line 434, in reraise
+    raise exception
+KeyError: Caught KeyError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/ajay/Documents/smartbog_imgseg/peat_dataloader.py", line 104, in __getitem__
+    image = self.transform(image)
+  File "/home/ajay/.local/lib/python3.8/site-packages/albumentations/core/composition.py", line 188, in __call__
+    raise KeyError("You have to pass data to augmentations as named arguments, for example: aug(image=image)")
+KeyError: 'You have to pass data to augmentations as named arguments, for example: aug(image=image)'

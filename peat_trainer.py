@@ -7,7 +7,11 @@ import pytorch_lightning as pl
 import segmentation_models_pytorch as smp
 import numpy as np
 
+import wandb
 
+from torchvision import transforms
+import albumentations as A 
+from albumentations.pytorch import ToTensorV2
 
 from sklearn.model_selection import train_test_split
 
@@ -23,19 +27,40 @@ import neptune.new as neptune
 
 # run = neptune.init(project='ajravikumar/peat-segmentation')
 
-params = {
-    "batch_size": 16,
-    "learning_rate": 1e-4,
-    "optimizer": "Adam",
-    "criterion": "DiceLoss",
-    "resolution": "256x256"
-}
-# run["parameters"] = params
+# wandb.init(project='img_seg')
 
 
 
-train_dataset = PeatDataset('train')
-val_dataset = PeatDataset('val')
+# wandb.config= {
+#     "batch_size": 64,
+#     "learning_rate": 1e-3,
+#     "optimizer": "Adam",
+#     "criterion": "DiceLoss",
+#     "resolution": "256x256"
+# }
+
+
+train_transform=transforms.Compose([
+            # transforms.normalize(mean, std),
+            transforms.Resize(256),
+            transforms.ToTensor()
+        ])
+
+# train_transform=A.Compose([
+#             # transforms.normalize(mean, std),
+#             A.Resize(256, 256),
+#             # ToTensorV2(),
+#         ])
+
+val_transform=transforms.Compose([
+            # transforms.normalize(mean, std),
+            transforms.Resize(256),
+            # transforms.ToTensor()
+        ])
+
+
+train_dataset = PeatDataset('train', transform = train_transform)
+val_dataset = PeatDataset('val', transform = train_transform)
 test_dataset = PeatDataset('test')
 
 # import pdb; pdb.set_trace()
@@ -49,16 +74,13 @@ print(f'Number of training samples: {len(train_dataset)}')
 print(f'Number of validation samples: {len(val_dataset)}')
 print(f'Number of test samples: {len(test_dataset)}')
 
-train_dataloader = DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=8, drop_last=True)
-val_dataloader = DataLoader(val_dataset, batch_size=64, num_workers=8, drop_last=True)
-test_dataloader = DataLoader(test_dataset, batch_size=32, num_workers=8, drop_last=True)
+num_worker =8
 
-# sample = train_dataset.images
-# # plt.subplot(1,2,1)
-# # plt.imshow(sample["image"].transpose(1, 2, 0)) # for visualization we have to transpose back to HWC
-# # plt.subplot(1,2,2)
-# # plt.imshow(sample["mask"].squeeze())  # for visualization we have to remove 3rd dimension of mask
-# # plt.show()
+train_dataloader = DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=num_worker, drop_last=True)
+val_dataloader = DataLoader(val_dataset, batch_size=64, num_workers=num_worker, drop_last=True)
+test_dataloader = DataLoader(test_dataset, batch_size=32, num_workers=num_worker, drop_last=True)
+
+
 
 # import pdb; pdb.set_trace()
 
@@ -94,13 +116,17 @@ def train_model(model, train_dataloader, optimizer, epoch):
     for image,mask in train_dataloader:
         optimizer.zero_grad()
 
+        # image = image.float()
+
         if torch.cuda.is_available():
             image = image.cuda()
             mask = mask.cuda()
             
+        
 
         prediction = model.forward(image)
 
+        # import pdb; pdb.set_trace()
         
         loss = criterion(prediction, mask)
 
@@ -223,7 +249,13 @@ for epoch in range(num_epoch):
                       optimizer.param_groups[0]['lr']
                   ))
 
-    scheduler.step(val_loss)              
+    scheduler.step(val_loss)  
+
+    # wandb.log ({"training loss" : loss})  
+    # wandb.log ({"training iou" : iou})            
+    # wandb.log ({"validation loss" : val_loss})            
+    # wandb.log ({"validation iou" : val_iou})                  
+          
 
     # if loss.item() < best_loss and loss.item() != 0.0:
     #     best_loss = loss.item()

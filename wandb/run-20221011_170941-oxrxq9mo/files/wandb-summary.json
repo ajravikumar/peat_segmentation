@@ -1,0 +1,1 @@
+{"training loss": 0.8023, "_timestamp": 1665504614.0006838, "_runtime": 32.12323474884033, "_step": 3, "training iou": 0.3923, "validation loss": 0.5733, "validation iou": 0.459, "_wandb": {"runtime": 35}}

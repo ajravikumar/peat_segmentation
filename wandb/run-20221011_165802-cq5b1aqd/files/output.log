@@ -1,0 +1,33 @@
+Number of training samples: 2828
+Number of validation samples: 353
+Number of test samples: 354
+[Epoch: 1 / 50 | avg train loss 0.8129  | avg train iou 0.3962 | avg validation loss 0.6053 | avg validation iou 0.4587| lr : 0.001
+[Epoch: 2 / 50 | avg train loss 0.4912  | avg train iou 0.4801 | avg validation loss 0.4837 | avg validation iou 0.4754| lr : 0.001
+Traceback (most recent call last):
+  File "peat_trainer.py", line 213, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 134, in train_model
+    optimizer.step()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/adam.py", line 133, in step
+    F.adam(params_with_grad,
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/_functional.py", line 94, in adam
+    denom = (exp_avg_sq.sqrt() / math.sqrt(bias_correction2)).add_(eps)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "peat_trainer.py", line 213, in <module>
+    loss, iou = train_model(model, train_dataloader, optimizer, epoch )
+  File "peat_trainer.py", line 134, in train_model
+    optimizer.step()
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/adam.py", line 133, in step
+    F.adam(params_with_grad,
+  File "/home/ajay/.local/lib/python3.8/site-packages/torch/optim/_functional.py", line 94, in adam
+    denom = (exp_avg_sq.sqrt() / math.sqrt(bias_correction2)).add_(eps)
+KeyboardInterrupt

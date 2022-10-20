@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.15.0-48-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-10-11T17:29:37.842300",
+    "startedAt": "2022-10-11T17:29:37.450286",
+    "docker": null,
+    "gpu": "NVIDIA TITAN Xp",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "peat_trainer.py",
+    "codePath": "peat_trainer.py",
+    "git": {
+        "remote": "https://github.com/ajravikumar/peat_segmentation.git",
+        "commit": "48eff50d6aa3fa607bd91b0849ff5aa816cbb39d"
+    },
+    "email": "ajayravikumar007@gmail.com",
+    "root": "/home/ajay/Documents/smartbog_imgseg",
+    "host": "ajay-MS-7850",
+    "username": "ajay",
+    "executable": "/usr/bin/python3"
+}

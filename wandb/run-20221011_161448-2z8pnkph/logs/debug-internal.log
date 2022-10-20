@@ -1,0 +1,153 @@
+2022-10-11 16:14:48,706 INFO    StreamThr :141452 [internal.py:wandb_internal():88] W&B internal server running at pid: 141452, started at: 2022-10-11 16:14:48.705871
+2022-10-11 16:14:48,707 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: status
+2022-10-11 16:14:48,708 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: status
+2022-10-11 16:14:48,709 DEBUG   SenderThread:141452 [sender.py:send():301] send: header
+2022-10-11 16:14:48,709 INFO    WriterThread:141452 [datastore.py:open_for_write():75] open: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/run-2z8pnkph.wandb
+2022-10-11 16:14:48,735 DEBUG   SenderThread:141452 [sender.py:send():301] send: run
+2022-10-11 16:14:49,075 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: check_version
+2022-10-11 16:14:49,078 INFO    SenderThread:141452 [dir_watcher.py:__init__():216] watching files in: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files
+2022-10-11 16:14:49,078 INFO    SenderThread:141452 [sender.py:_start_run_threads():912] run started: 2z8pnkph with start time 1665501288.70302
+2022-10-11 16:14:49,078 DEBUG   SenderThread:141452 [sender.py:send():301] send: summary
+2022-10-11 16:14:49,078 INFO    SenderThread:141452 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-11 16:14:49,078 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: check_version
+2022-10-11 16:14:49,109 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: run_start
+2022-10-11 16:14:49,111 DEBUG   HandlerThread:141452 [meta.py:__init__():34] meta init
+2022-10-11 16:14:49,111 DEBUG   HandlerThread:141452 [meta.py:__init__():49] meta init done
+2022-10-11 16:14:49,111 DEBUG   HandlerThread:141452 [meta.py:probe():215] probe
+2022-10-11 16:14:49,117 DEBUG   HandlerThread:141452 [meta.py:_setup_git():205] setup git
+2022-10-11 16:14:49,127 DEBUG   HandlerThread:141452 [meta.py:_setup_git():212] setup git done
+2022-10-11 16:14:49,127 DEBUG   HandlerThread:141452 [meta.py:_save_pip():53] save pip
+2022-10-11 16:14:49,128 DEBUG   HandlerThread:141452 [meta.py:_save_pip():67] save pip done
+2022-10-11 16:14:49,128 DEBUG   HandlerThread:141452 [meta.py:probe():253] probe done
+2022-10-11 16:14:49,215 DEBUG   SenderThread:141452 [sender.py:send():301] send: files
+2022-10-11 16:14:49,215 INFO    SenderThread:141452 [sender.py:_save_file():1155] saving file wandb-metadata.json with policy now
+2022-10-11 16:14:49,220 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: stop_status
+2022-10-11 16:14:49,220 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: stop_status
+2022-10-11 16:14:49,310 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:49,355 DEBUG   SenderThread:141452 [sender.py:send():301] send: telemetry
+2022-10-11 16:14:49,356 DEBUG   SenderThread:141452 [sender.py:send():301] send: exit
+2022-10-11 16:14:49,356 INFO    SenderThread:141452 [sender.py:send_exit():437] handling exit code: 1
+2022-10-11 16:14:49,356 INFO    SenderThread:141452 [sender.py:send_exit():439] handling runtime: 0
+2022-10-11 16:14:49,357 INFO    SenderThread:141452 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-11 16:14:49,357 INFO    SenderThread:141452 [sender.py:send_exit():445] send defer
+2022-10-11 16:14:49,357 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:49,357 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,357 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 0
+2022-10-11 16:14:49,358 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,358 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 0
+2022-10-11 16:14:49,358 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 1
+2022-10-11 16:14:49,358 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,358 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 1
+2022-10-11 16:14:49,390 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,390 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 1
+2022-10-11 16:14:49,391 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 2
+2022-10-11 16:14:49,391 DEBUG   SenderThread:141452 [sender.py:send():301] send: stats
+2022-10-11 16:14:49,391 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,391 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 2
+2022-10-11 16:14:49,391 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,392 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 2
+2022-10-11 16:14:49,392 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 3
+2022-10-11 16:14:49,392 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,392 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 3
+2022-10-11 16:14:49,392 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,392 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 3
+2022-10-11 16:14:49,392 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 4
+2022-10-11 16:14:49,392 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,392 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 4
+2022-10-11 16:14:49,393 DEBUG   SenderThread:141452 [sender.py:send():301] send: summary
+2022-10-11 16:14:49,393 INFO    SenderThread:141452 [sender.py:_save_file():1155] saving file wandb-summary.json with policy end
+2022-10-11 16:14:49,393 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,393 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 4
+2022-10-11 16:14:49,393 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 5
+2022-10-11 16:14:49,393 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,393 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 5
+2022-10-11 16:14:49,394 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,394 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 5
+2022-10-11 16:14:49,458 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:49,600 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 6
+2022-10-11 16:14:49,600 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:49,600 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:49,600 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 6
+2022-10-11 16:14:49,601 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:49,601 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 6
+2022-10-11 16:14:49,701 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:50,074 INFO    Thread-17 :141452 [upload_job.py:push():139] Uploaded file /tmp/tmp6re04q7zwandb/f3m6e3nj-wandb-metadata.json
+2022-10-11 16:14:50,080 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/config.yaml
+2022-10-11 16:14:50,080 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/wandb-summary.json
+2022-10-11 16:14:50,080 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/requirements.txt
+2022-10-11 16:14:50,080 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/wandb-metadata.json
+2022-10-11 16:14:50,080 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_created():275] file/dir created: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/output.log
+2022-10-11 16:14:51,364 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 7
+2022-10-11 16:14:51,364 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:51,366 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:51,366 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 7
+2022-10-11 16:14:51,367 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:51,367 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 7
+2022-10-11 16:14:51,367 INFO    SenderThread:141452 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-10-11 16:14:51,468 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,079 INFO    Thread-13 :141452 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/output.log
+2022-10-11 16:14:52,081 INFO    SenderThread:141452 [dir_watcher.py:finish():392] scan: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files
+2022-10-11 16:14:52,082 INFO    SenderThread:141452 [dir_watcher.py:finish():406] scan save: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/config.yaml config.yaml
+2022-10-11 16:14:52,082 INFO    SenderThread:141452 [dir_watcher.py:finish():406] scan save: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/wandb-summary.json wandb-summary.json
+2022-10-11 16:14:52,089 INFO    SenderThread:141452 [dir_watcher.py:finish():406] scan save: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/wandb-metadata.json wandb-metadata.json
+2022-10-11 16:14:52,089 INFO    SenderThread:141452 [dir_watcher.py:finish():406] scan save: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/requirements.txt requirements.txt
+2022-10-11 16:14:52,091 INFO    SenderThread:141452 [dir_watcher.py:finish():406] scan save: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/output.log output.log
+2022-10-11 16:14:52,092 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 8
+2022-10-11 16:14:52,092 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,096 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:52,097 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 8
+2022-10-11 16:14:52,097 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:52,098 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 8
+2022-10-11 16:14:52,098 INFO    SenderThread:141452 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-11 16:14:52,199 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,199 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,301 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,302 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,404 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,405 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,507 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,508 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,567 INFO    Thread-20 :141452 [upload_job.py:push():139] Uploaded file /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/requirements.txt
+2022-10-11 16:14:52,578 INFO    Thread-19 :141452 [upload_job.py:push():139] Uploaded file /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/wandb-summary.json
+2022-10-11 16:14:52,610 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,610 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,619 INFO    Thread-21 :141452 [upload_job.py:push():139] Uploaded file /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/output.log
+2022-10-11 16:14:52,624 INFO    Thread-18 :141452 [upload_job.py:push():139] Uploaded file /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/files/config.yaml
+2022-10-11 16:14:52,712 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,713 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,815 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,816 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,824 INFO    Thread-12 :141452 [sender.py:transition_state():458] send defer: 9
+2022-10-11 16:14:52,825 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:52,825 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 9
+2022-10-11 16:14:52,826 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:52,826 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 9
+2022-10-11 16:14:52,918 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:52,983 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 10
+2022-10-11 16:14:52,983 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:52,984 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:52,984 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 10
+2022-10-11 16:14:52,985 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:52,985 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 10
+2022-10-11 16:14:52,986 INFO    SenderThread:141452 [sender.py:transition_state():458] send defer: 11
+2022-10-11 16:14:52,987 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: defer
+2022-10-11 16:14:52,987 INFO    HandlerThread:141452 [handler.py:handle_request_defer():161] handle defer: 11
+2022-10-11 16:14:52,987 DEBUG   SenderThread:141452 [sender.py:send():301] send: final
+2022-10-11 16:14:52,988 DEBUG   SenderThread:141452 [sender.py:send():301] send: footer
+2022-10-11 16:14:52,988 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: defer
+2022-10-11 16:14:52,988 INFO    SenderThread:141452 [sender.py:send_request_defer():454] handle sender defer: 11
+2022-10-11 16:14:53,086 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: poll_exit
+2022-10-11 16:14:53,087 DEBUG   SenderThread:141452 [sender.py:send_request():315] send_request: poll_exit
+2022-10-11 16:14:53,087 INFO    SenderThread:141452 [file_pusher.py:join():173] waiting for file pusher
+2022-10-11 16:14:53,458 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: sampled_history
+2022-10-11 16:14:53,460 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: get_summary
+2022-10-11 16:14:53,461 INFO    MainThread:141452 [wandb_run.py:_footer_history_summary_info():3321] rendering history
+2022-10-11 16:14:53,462 INFO    MainThread:141452 [wandb_run.py:_footer_history_summary_info():3353] rendering summary
+2022-10-11 16:14:53,462 INFO    MainThread:141452 [wandb_run.py:_footer_sync_info():3277] logging synced files
+2022-10-11 16:14:53,463 DEBUG   HandlerThread:141452 [handler.py:handle_request():138] handle_request: shutdown
+2022-10-11 16:14:53,463 INFO    HandlerThread:141452 [handler.py:finish():807] shutting down handler
+2022-10-11 16:14:53,988 INFO    WriterThread:141452 [datastore.py:close():279] close: /home/ajay/Documents/smartbog_imgseg/wandb/run-20221011_161448-2z8pnkph/run-2z8pnkph.wandb
+2022-10-11 16:14:54,357 INFO    SenderThread:141452 [sender.py:finish():1315] shutting down sender
+2022-10-11 16:14:54,357 INFO    SenderThread:141452 [file_pusher.py:finish():168] shutting down file pusher
+2022-10-11 16:14:54,357 INFO    SenderThread:141452 [file_pusher.py:join():173] waiting for file pusher
+2022-10-11 16:14:54,467 INFO    MainThread:141452 [internal.py:handle_exit():78] Internal process exited
