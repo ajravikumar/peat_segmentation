@@ -6,6 +6,7 @@ import numpy as np
 from PIL import ImageFilter
 
 from PIL import Image
+import cv2
 
 
 from tqdm import tqdm
@@ -70,13 +71,23 @@ class PeatDataset(torch.utils.data.Dataset):
 
         # import pdb; pdb.set_trace()
 
-        
+        # For PIL
         image = Image.open(image_path)
         # image = np.array(image)
 
         mask = Image.open(mask_path)
         mask = mask.filter(ImageFilter.MaxFilter(7))
         # mask = np.array(mask)
+        # mask = mask[:, :, np.newaxis]
+
+        # For cv2
+        # image = cv2.imread(image_path)
+        # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+        # mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)//255
+        # mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY )
+        # mask = cv2.cvtColor(mask, cv2.COLOR_BGR2RGB)
+
         
         # print(image.dtype, mask.dtype)
 
